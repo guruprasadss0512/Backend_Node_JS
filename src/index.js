@@ -2,10 +2,10 @@
 
 import dotenv from "dotenv";
 import connectDB from "./db/index.js";
-import app from "./app.js";
+import { app } from "./app.js";
 
 dotenv.config({
-  path: "./env",
+  path: "./.env",
 });
 
 connectDB()
@@ -18,7 +18,8 @@ connectDB()
     console.log("Mongo DB connection failed", err);
   });
 
-/* Working code - imp
+/*
+//Working code - imp
 
 import express from "express";
 import connectDB from "./db/index.js"; // Import connection logic
@@ -29,18 +30,16 @@ const app = express();
 connectDB()
   .then(() => {
     // Start the server only after successful connection
-    app.listen(process.env.PORT || 3000, () => {
-      console.log(`Server listening on port: ${process.env.PORT || 3000}`);
+    app.listen(process.env.PORT || 8000, () => {
+      console.log(`Server listening on port: ${process.env.PORT || 8000}`);
     });
   })
   .catch((error) => {
     console.error("Error starting server:", error);
     process.exit(1); // Exit on connection failure
   });
-
-// Your Express app routes and logic here
-
 */
+// Your Express app routes and logic here
 
 /* Hitesh old code 
 //require("dotenv").config({ path: "./env" });
